@@ -3,6 +3,6 @@
 
 # Except
 !.gitignore
-!.atom
-!.oh-my-zsh
+!.atom/*
+!.oh-my-zsh/*
 !.zshrc
