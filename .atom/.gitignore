@@ -3,6 +3,6 @@
 
 # Except
 !.gitignore
-!.atom
-!.oh-my-zsh
-!.zshrc
+!.apm
+!packages
+!config.cson

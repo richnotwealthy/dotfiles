@@ -1,0 +1,46 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "e8758730-bcc2-49ff-9e05-19d0f2138e3d"
+    js:
+      indent_size: 2
+    jsx:
+      indent_size: 2
+  "atom-material-ui":
+    colors:
+      abaseColor: "#ad4444"
+      predefinedColor: "Indigo"
+    fonts: {}
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "dracula-theme"
+    ]
+  editor:
+    fontSize: 13
+    scrollPastEnd: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "76436229-8427-8dc3-6025-94e6f947af78"
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "seti-syntax": {}
+  "seti-ui":
+    font: "Default Atom Font"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
