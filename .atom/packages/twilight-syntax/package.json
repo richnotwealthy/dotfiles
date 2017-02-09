@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11718-24976-dgagjr/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+        "spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11718-24976-13glmop"
+    ]
+  ],
+  "_from": "../d-11718-24976-dgagjr/package.tgz",
+  "_id": "twilight-syntax@0.7.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/twilight-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11718-24976-dgagjr/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+    "spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11718-24976-dgagjr/package.tgz",
+  "_shasum": "f0a40c625e281214e702b3fa6f8f33ef4f535bbe",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11718-24976-13glmop",
+  "bugs": {
+    "url": "https://github.com/cannikin/twilight-syntax/issues"
+  },
+  "dependencies": {},
+  "description": "Twilight syntax theme for GitHub's Atom IDE",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/cannikin/twilight-syntax#readme",
+  "license": "MIT",
+  "name": "twilight-syntax",
+  "optionalDependencies": {},
+  "readme": "twilight-syntax\n===============\n\nTwilight theme for GitHub's Atom IDE.\n\nPorted from the Twilight Textmate theme.\n\n![screenshot](http://ridingtheclutch.com.s3.amazonaws.com/images/twilight-syntax.png)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cannikin/twilight-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.7.0"
+}

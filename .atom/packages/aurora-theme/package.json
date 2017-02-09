@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+        "spec": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11716-6484-8zuc0v"
+    ]
+  ],
+  "_from": "../d-11716-6484-ai4j0w/package.tgz",
+  "_id": "aurora-theme@1.2.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/aurora-theme",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+    "spec": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11716-6484-ai4j0w/package.tgz",
+  "_shasum": "8124d420f3d9bb87753682b4ddfbce4915528fb8",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11716-6484-ai4j0w/package.tgz",
+  "_where": "/tmp/apm-install-dir-11716-6484-8zuc0v",
+  "bugs": {
+    "url": "https://github.com/itamarjr/aurora/issues"
+  },
+  "dependencies": {},
+  "description": "Aurora theme, inspired in aurora boreal.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/itamarjr/aurora#readme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "dark",
+    "green",
+    "aurora"
+  ],
+  "license": "MIT",
+  "name": "aurora-theme",
+  "optionalDependencies": {},
+  "readme": "# Aurora theme\nMy First release aurora theme for Atom.\n\n![Aurora boreal](https://itamarjr.github.io/assets/img/themes/aurora/aurora.jpg)\n\nThis theme was inspired by the aurora boreal.\n\n##Printscreen example:\n![Aurora](https://itamarjr.github.io/assets/img/themes/aurora/printscreen.png)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itamarjr/aurora.git"
+  },
+  "theme": "syntax",
+  "version": "1.2.2"
+}

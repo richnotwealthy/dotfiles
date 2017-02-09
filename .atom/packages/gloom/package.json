@@ -1,0 +1,65 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11716-7526-s7ayob/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+        "spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11716-7526-283yf2"
+    ]
+  ],
+  "_from": "../d-11716-7526-s7ayob/package.tgz",
+  "_id": "gloom@0.4.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gloom",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11716-7526-s7ayob/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+    "spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11716-7526-s7ayob/package.tgz",
+  "_shasum": "00ff45b93d4a06981d7b1d97b07835f3c3025b5a",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+  "_where": "/tmp/apm-install-dir-11716-7526-283yf2",
+  "bugs": {
+    "url": "https://github.com/lessthanthree/gloom/issues"
+  },
+  "dependencies": {},
+  "description": "A dark and gloomy pastel color syntax theme for Atom.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/lessthanthree/gloom#readme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "gloom"
+  ],
+  "license": "MIT",
+  "name": "gloom",
+  "optionalDependencies": {},
+  "readme": "# gloom\n\nA dark and gloomy pastel color syntax theme for Atom.\n\n## Requirements\n* Atom Editor version 1.13 or newer\n\n![Preview](https://raw.githubusercontent.com/lessthanthree/gloom/master/screenshot.png)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lessthanthree/gloom.git"
+  },
+  "theme": "syntax",
+  "version": "0.4.4"
+}

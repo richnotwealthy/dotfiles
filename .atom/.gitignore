@@ -1,8 +1,6 @@
-# Ignore everything
-*
-
-# Except
-!.gitignore
-!.apm
-!packages
-!config.cson
+.node-gyp
+blob-store
+compile-cache
+recovery
+storage
+nohup.out
