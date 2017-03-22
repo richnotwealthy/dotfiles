@@ -2,42 +2,42 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11716-7526-s7ayob/package.tgz",
+        "raw": "/tmp/d-117222-30305-1qikjkc/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11716-7526-s7ayob/package.tgz",
-        "spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+        "rawSpec": "/tmp/d-117222-30305-1qikjkc/package.tgz",
+        "spec": "/tmp/d-117222-30305-1qikjkc/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11716-7526-283yf2"
+      "/tmp/apm-install-dir-117222-30305-1693t4o"
     ]
   ],
-  "_from": "../d-11716-7526-s7ayob/package.tgz",
-  "_id": "gloom@0.4.4",
+  "_from": "../d-117222-30305-1qikjkc/package.tgz",
+  "_id": "gloom@0.4.9",
   "_inCache": true,
   "_installable": true,
   "_location": "/gloom",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11716-7526-s7ayob/package.tgz",
+    "raw": "/tmp/d-117222-30305-1qikjkc/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11716-7526-s7ayob/package.tgz",
-    "spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
+    "rawSpec": "/tmp/d-117222-30305-1qikjkc/package.tgz",
+    "spec": "/tmp/d-117222-30305-1qikjkc/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11716-7526-s7ayob/package.tgz",
-  "_shasum": "00ff45b93d4a06981d7b1d97b07835f3c3025b5a",
+  "_resolved": "file:../d-117222-30305-1qikjkc/package.tgz",
+  "_shasum": "283a8b0d92ef40a51b4725bb8d9292cce346298c",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11716-7526-s7ayob/package.tgz",
-  "_where": "/tmp/apm-install-dir-11716-7526-283yf2",
+  "_spec": "/tmp/d-117222-30305-1qikjkc/package.tgz",
+  "_where": "/tmp/apm-install-dir-117222-30305-1693t4o",
   "bugs": {
-    "url": "https://github.com/lessthanthree/gloom/issues"
+    "url": "https://github.com/hejrobin/gloom/issues"
   },
   "dependencies": {},
   "description": "A dark and gloomy pastel color syntax theme for Atom.",
@@ -45,7 +45,7 @@
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
-  "homepage": "https://github.com/lessthanthree/gloom#readme",
+  "homepage": "https://github.com/hejrobin/gloom#readme",
   "keywords": [
     "syntax",
     "theme",
@@ -54,12 +54,12 @@
   "license": "MIT",
   "name": "gloom",
   "optionalDependencies": {},
-  "readme": "# gloom\n\nA dark and gloomy pastel color syntax theme for Atom.\n\n## Requirements\n* Atom Editor version 1.13 or newer\n\n![Preview](https://raw.githubusercontent.com/lessthanthree/gloom/master/screenshot.png)\n",
+  "readme": "# gloom\n\nA dark and gloomy pastel color syntax theme for Atom.\n\n## Requirements\n* Atom Editor version 1.13 or newer\n\n![Preview](https://raw.githubusercontent.com/hejrobin/gloom/master/screenshot.png)\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lessthanthree/gloom.git"
+    "url": "git+https://github.com/hejrobin/gloom.git"
   },
   "theme": "syntax",
-  "version": "0.4.4"
+  "version": "0.4.9"
 }

@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11716-7251-dchbk8/package.tgz",
+        "raw": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11716-7251-dchbk8/package.tgz",
-        "spec": "/tmp/d-11716-7251-dchbk8/package.tgz",
+        "rawSpec": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
+        "spec": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11716-7251-1nkyh7i"
+      "/tmp/apm-install-dir-117222-30306-10iudpg"
     ]
   ],
-  "_from": "../d-11716-7251-dchbk8/package.tgz",
-  "_id": "monokai@0.20.0",
+  "_from": "../d-117222-30306-1a2kqyt/package.tgz",
+  "_id": "monokai@0.22.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/monokai",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11716-7251-dchbk8/package.tgz",
+    "raw": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11716-7251-dchbk8/package.tgz",
-    "spec": "/tmp/d-11716-7251-dchbk8/package.tgz",
+    "rawSpec": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
+    "spec": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11716-7251-dchbk8/package.tgz",
-  "_shasum": "ec6a3cc1fb0a2be07c59cf76518fe73b9b1cbe8b",
+  "_resolved": "file:../d-117222-30306-1a2kqyt/package.tgz",
+  "_shasum": "c294088c9fe1c46d1ee61424dd4115d7974b001a",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11716-7251-dchbk8/package.tgz",
-  "_where": "/tmp/apm-install-dir-11716-7251-1nkyh7i",
+  "_spec": "/tmp/d-117222-30306-1a2kqyt/package.tgz",
+  "_where": "/tmp/apm-install-dir-117222-30306-10iudpg",
   "bugs": {
     "url": "https://github.com/kevinsawicki/monokai/issues"
   },
@@ -57,5 +57,5 @@
     "url": "git+https://github.com/kevinsawicki/monokai.git"
   },
   "theme": "syntax",
-  "version": "0.20.0"
+  "version": "0.22.0"
 }
