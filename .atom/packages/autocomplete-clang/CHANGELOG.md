@@ -1,3 +1,20 @@
+## 0.11.3
+* Use temporary directory for args
+
+## 0.11.2
+* Fix for args length check
+
+## 0.11.1
+* Change args limit
+
+## 0.11.0
+* Add some tests
+* Large Refactoring
+* Add workaround for case with many arguments
+
+## 0.10.1
+* Fix AST parsing with ':' in filenames #147
+
 ## 0.10.0
 * Add the option to show system headers' documentation #118
 * Handle C++ default/optional parameters correctly #121

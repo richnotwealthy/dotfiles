@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11718-24976-dgagjr/package.tgz",
+        "raw": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11718-24976-dgagjr/package.tgz",
-        "spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+        "rawSpec": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
+        "spec": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11718-24976-13glmop"
+      "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/apm-install-dir-117423-1648-kb2r2q.czmmquxr"
     ]
   ],
-  "_from": "../d-11718-24976-dgagjr/package.tgz",
-  "_id": "twilight-syntax@0.7.0",
+  "_from": "../d-117423-1648-1r6j3nt.29y66r/package.tgz",
+  "_id": "twilight-syntax@0.8.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/twilight-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11718-24976-dgagjr/package.tgz",
+    "raw": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11718-24976-dgagjr/package.tgz",
-    "spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
+    "rawSpec": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
+    "spec": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11718-24976-dgagjr/package.tgz",
-  "_shasum": "f0a40c625e281214e702b3fa6f8f33ef4f535bbe",
+  "_resolved": "file:../d-117423-1648-1r6j3nt.29y66r/package.tgz",
+  "_shasum": "d0ce1b5a559f82cd3cbaabfb2cdafc343bc3960f",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11718-24976-dgagjr/package.tgz",
-  "_where": "/tmp/apm-install-dir-11718-24976-13glmop",
+  "_spec": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/d-117423-1648-1r6j3nt.29y66r/package.tgz",
+  "_where": "/private/var/folders/ym/0gc1wn3d49n0754m93qj2n8h0000gn/T/apm-install-dir-117423-1648-kb2r2q.czmmquxr",
   "bugs": {
     "url": "https://github.com/cannikin/twilight-syntax/issues"
   },
@@ -43,7 +43,7 @@
   "description": "Twilight syntax theme for GitHub's Atom IDE",
   "devDependencies": {},
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">1.13.0"
   },
   "homepage": "https://github.com/cannikin/twilight-syntax#readme",
   "license": "MIT",
@@ -56,5 +56,15 @@
     "url": "git+https://github.com/cannikin/twilight-syntax.git"
   },
   "theme": "syntax",
-  "version": "0.7.0"
+  "version": "0.8.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }
