@@ -20,15 +20,19 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
-Plug 'yggdroot/indentline'
 Plug 'gregsexton/matchtag'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'mxw/vim-jsx'
+Plug 'mileszs/ack.vim'
+Plug 'vim-scripts/mru.vim'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
 " Colors
+set t_Co=256
 syntax on
 color dracula
 let g:airline_theme='dracula'
@@ -123,3 +127,35 @@ map <C-\> :NERDTreeToggle<CR>
 
 " Close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Show hidden files by default in NERDTree
+let NERDTreeShowHidden=1
+
+" Enable mouse
+set mouse=a
+
+" JSX for .jsx and .js files
+let g:jsx_ext_required = 0
+
+" Better movement between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Tab match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Ack
+nnoremap <leader>a :Ack
+
+" Backup and swap file locations outside of working dir
+if !isdirectory($HOME.'/.vim/swaps')
+    silent call mkdir ($HOME.'/.vim/swaps', 'p')
+endif
+if !isdirectory($HOME.'/.vim/backups')
+    silent call mkdir ($HOME.'/.vim/backups', 'p')
+endif
+set directory=$HOME/.vim/swaps//
+set backupdir=$HOME/.vim/backups//
