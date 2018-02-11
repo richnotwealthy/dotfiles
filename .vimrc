@@ -28,6 +28,7 @@ Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'valloric/youcompleteme'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -123,7 +124,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Open NERDTree
-map <C-\> :NERDTreeToggle<CR>
+map <leader>. :NERDTreeToggle<CR>
 
 " Close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -138,10 +139,11 @@ set mouse=a
 let g:jsx_ext_required = 0
 
 " Better movement between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Replaced by vim-tmux-navigator
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " Tab match bracket pairs
 nnoremap <tab> %
