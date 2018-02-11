@@ -27,8 +27,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'valloric/youcompleteme'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'valloric/youcompleteme'
 
 call plug#end()
 
@@ -61,7 +60,7 @@ set softtabstop=4
 set expandtab
 set autoindent
 
-" Visual line movement swapped with physical
+" Visual line movement instead of physical
 nnoremap k gk
 nnoremap j gj
 nnoremap gk k
@@ -139,11 +138,10 @@ set mouse=a
 let g:jsx_ext_required = 0
 
 " Better movement between windows
-" Replaced by vim-tmux-navigator
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Tab match bracket pairs
 nnoremap <tab> %
