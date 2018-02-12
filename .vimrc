@@ -28,6 +28,9 @@ Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'alvan/vim-closetag'
 
 " Plug 'valloric/youcompleteme'
 
