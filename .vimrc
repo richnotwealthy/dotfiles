@@ -130,6 +130,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Open NERDTree
 map <leader>. :NERDTreeToggle<CR>
 
+" Reveal current file in NERDTree
+nmap <leader>/ :NERDTreeFind<CR>
+
 " Close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
