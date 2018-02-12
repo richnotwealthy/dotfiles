@@ -135,7 +135,7 @@ let NERDTreeShowHidden=1
 set mouse=a
 
 " JSX for .jsx and .js files
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 " Better movement between windows
 nnoremap <C-h> <C-w>h
