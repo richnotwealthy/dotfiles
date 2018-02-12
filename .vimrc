@@ -149,16 +149,24 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Tab match bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
+map <Tab> %
 
-" Tag colors
-highlight link xmlEndTag xmlTag
-highlight link htmlEndTag htmlTag
-highlight link htmlTagName htmlTag
+" TODO: Tag colors
+hi link xmlEndTag xmlTag
+hi link htmlEndTag htmlTag
+hi link htmlTagN htmlTag
+hi link htmlTagName htmlTag
 
 " Ack
 nnoremap <leader>a :Ack
+
+" Syntax identifier
+function! SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " Backup and swap file locations outside of working dir
 if !isdirectory($HOME.'/.vim/swaps')
