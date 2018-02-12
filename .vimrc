@@ -27,6 +27,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/mru.vim'
+Plug 'pangloss/vim-javascript'
+
 " Plug 'valloric/youcompleteme'
 
 call plug#end()
