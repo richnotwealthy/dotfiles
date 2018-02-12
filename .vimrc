@@ -64,6 +64,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+set smartindent
 
 function! SetTab2()
     set tabstop=2
