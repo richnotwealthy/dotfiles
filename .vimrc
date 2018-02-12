@@ -65,6 +65,12 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+function! SetTab2()
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction
+
 " Visual line movement instead of physical
 nnoremap k gk
 nnoremap j gj
