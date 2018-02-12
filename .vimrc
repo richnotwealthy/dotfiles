@@ -152,6 +152,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <tab> %
 vnoremap <tab> %
 
+" End tags same color as begin tags
+highlight link xmlEndTag xmlTag
+
 " Ack
 nnoremap <leader>a :Ack
 
