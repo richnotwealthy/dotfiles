@@ -98,6 +98,10 @@ set laststatus=2
 set showmode
 set showcmd
 
+" Wildmenu for command autocomplete
+set wildmenu
+set wildmode=longest:full,full
+
 " Highlight current line
 set cursorline
 
