@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-fugitive'
 
 " Plug 'valloric/youcompleteme'
 
@@ -40,7 +41,7 @@ call plug#end()
 set t_Co=256
 syntax on
 color dracula
-let g:airline_theme='dracula'
+"let g:airline_theme='dracula'
 
 "  leader key
 let mapleader = ","
