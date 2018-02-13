@@ -174,6 +174,9 @@ hi link htmlTagName htmlTag
 " Ack
 nnoremap <leader>a :Ack
 
+" Ctrlp ignore
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
 " Syntax identifier
 function! SynStack()
     if !exists("*synstack")
