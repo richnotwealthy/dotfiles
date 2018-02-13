@@ -49,7 +49,10 @@ let mapleader = ","
 set modelines=0
 
 " Show relative line numbers
-set relativenumber
+" set relativenumber
+
+" Show line numbers
+set nu
 
 " Show file stats
 set ruler
