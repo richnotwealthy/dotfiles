@@ -5,4 +5,6 @@ printf "so $HOME/dotfiles/vimrc.vim" > ~/.vimrc
 printf "source-file $HOME/dotfiles/tmux.conf" > ~/.tmux.conf
 printf "source '$HOME/dotfiles/zshrc.zsh'" >> ~/.zshrc
 
-echo "\n.zshrc, .vimrc, and .tmux.conf files linked to $HOME/dotfiles\n"
+echo "Success!"
+echo ".zshrc, .vimrc, and .tmux.conf files linked to $HOME/dotfiles"
+echo
