@@ -41,7 +41,11 @@ call plug#end()
 set t_Co=256
 syntax on
 color dracula
-"let g:airline_theme='dracula'
+let g:airline_theme='dracula'
+
+" JS Syntax
+hi link jsClassProperty jsClassFuncName
+hi link jsFuncCall jsClassFuncName
 
 "  leader key
 let mapleader = ","
@@ -180,7 +184,7 @@ map <leader>a :Ack!
 
 " If The Silver Searcher is installed, use it
 if executable('ag')
-	let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 " Ctrlp ignore
