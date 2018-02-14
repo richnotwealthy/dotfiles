@@ -178,6 +178,11 @@ hi link htmlTagName htmlTag
 " Ack
 nnoremap <leader>a :Ack
 
+" If The Silver Searcher is installed, use it
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
+
 " Ctrlp ignore
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 

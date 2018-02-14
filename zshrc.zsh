@@ -19,6 +19,11 @@ cdcustom() {
 }
 alias cd="cdcustom"
 
+# Git add all and commit with message
+gaacm() {
+	git add -A && git commit -m "$1"
+}
+
 alias zshrc="vim ~/dotfiles/zshrc.zsh"
 alias vimrc="vim ~/dotfiles/vimrc.vim"
 alias tmuxconf="vim ~/dotfiles/tmux.conf"
