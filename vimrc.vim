@@ -176,7 +176,7 @@ hi link htmlTagN htmlTag
 hi link htmlTagName htmlTag
 
 " Ack
-map <leader>a :Ack
+map <leader>a :Ack!
 
 " If The Silver Searcher is installed, use it
 if executable('ag')
