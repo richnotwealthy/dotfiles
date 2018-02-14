@@ -186,6 +186,9 @@ endif
 " Ctrlp ignore
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
+" Color the 120th column to keep text a good width
+set colorcolumn=120
+
 " Syntax identifier
 function! SynStack()
     if !exists("*synstack")
