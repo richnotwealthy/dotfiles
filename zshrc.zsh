@@ -13,15 +13,14 @@
 
 # Functions
 # ls whenever cd
-cdcustom() {
-    cd $1;
+cd() {
+    builtin cd $@;
     ls;
 }
-alias cd="cdcustom"
 
 # Git add all and commit with message
 gaacm() {
-	git add -A && git commit -m "$1"
+    command git add -A && git commit -m "$1"
 }
 
 alias zshrc="vim ~/dotfiles/zshrc.zsh"
