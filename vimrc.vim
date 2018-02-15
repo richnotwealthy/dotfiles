@@ -56,6 +56,10 @@ set modelines=0
 " Show relative line numbers
 " set relativenumber
 
+" Set split to below and right, more natural
+set splitbelow
+set splitright
+
 " Show line numbers
 set nu
 
@@ -161,6 +165,9 @@ let NERDTreeShowHidden=1
 " Enable mouse
 set mouse=a
 
+" Reload unchanged file buffers if the file changes
+set autoread
+
 " JSX for .jsx and .js files
 " let g:jsx_ext_required = 0
 
@@ -184,7 +191,17 @@ map <leader>a :Ack!
 
 " If The Silver Searcher is installed, use it
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+    " with :Ack
+    let g:ackprg='ag --nogroup --nocolor --column'
+
+    " Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command='ag --literal --files-with-matches --nocolor --hidden --ignore .git -g "" %s'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
 endif
 
 " Ctrlp ignore
@@ -201,12 +218,20 @@ function! SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Backup and swap file locations outside of working dir
+" Backups, swaps, and undo file locations outside of working dir
 if !isdirectory($HOME.'/.vim/swaps')
     silent call mkdir ($HOME.'/.vim/swaps', 'p')
 endif
 if !isdirectory($HOME.'/.vim/backups')
     silent call mkdir ($HOME.'/.vim/backups', 'p')
 endif
+if !isdirectory($HOME.'/.vim/undos')
+    silent call mkdir ($HOME.'/.vim/undos', 'p')
+endif
 set directory=$HOME/.vim/swaps//
 set backupdir=$HOME/.vim/backups//
+set undodir=$HOME/.vim/undos//
+
+set undofile
+set undolevels=1000
+set undoreload=10000
