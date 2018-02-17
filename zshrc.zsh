@@ -14,13 +14,18 @@
 # Functions
 # ls whenever cd
 cd() {
-    builtin cd $@;
-    ls;
+    builtin cd $@
+    ls
 }
 
 # Git add all and commit with message
 gaacm() {
     command git add -A && git commit -m "$1"
+}
+
+# Search all history
+histag() {
+    builtin history 0 | ag $@
 }
 
 alias zshrc="vim ~/dotfiles/zshrc.zsh"
