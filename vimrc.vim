@@ -32,6 +32,7 @@ Plug 'othree/html5.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
 
 " Plug 'valloric/youcompleteme'
 
