@@ -187,6 +187,9 @@ hi link htmlEndTag htmlTag
 hi link htmlTagN htmlTag
 hi link htmlTagName htmlTag
 
+" Autoclose extensions
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
+
 " Ack
 map <leader>a :Ack!
 
