@@ -34,8 +34,8 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
-
-Plug 'valloric/youcompleteme'
+Plug 'ervandew/supertab'
+" Plug 'valloric/youcompleteme'
 
 call plug#end()
 
