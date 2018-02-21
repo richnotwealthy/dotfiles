@@ -35,7 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
 
-" Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
