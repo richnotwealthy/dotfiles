@@ -34,7 +34,7 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
-Plug 'ervandew/supertab'
+Plug 'ajh17/vimcompletesme'
 
 call plug#end()
 
@@ -177,9 +177,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Let supertab figure out the best completion to use
-let g:SuperTabDefaultCompletionType = "context"
 
 " TODO: Tag colors
 hi link xmlEndTag xmlTag
