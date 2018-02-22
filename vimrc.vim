@@ -34,8 +34,7 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
-Plug 'ervandew/supertab'
-" Plug 'valloric/youcompleteme'
+Plug 'ajh17/vimcompletesme'
 
 call plug#end()
 
@@ -171,16 +170,13 @@ set mouse=a
 set autoread
 
 " JSX for .jsx and .js files
-" let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0
 
 " Better movement between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Tab match bracket pairs
-map <Tab> %
 
 " TODO: Tag colors
 hi link xmlEndTag xmlTag
