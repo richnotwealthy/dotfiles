@@ -28,6 +28,8 @@ histag() {
     builtin history 0 | ag $@
 }
 
+alias gitlg="git log --graph --decorate --all"
+
 alias zshrc="vim ~/dotfiles/zshrc.zsh"
 alias vimrc="vim ~/dotfiles/vimrc.vim"
 alias tmuxconf="vim ~/dotfiles/tmux.conf"
