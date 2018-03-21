@@ -29,6 +29,7 @@ histag() {
 }
 
 alias gitlg="git log --graph --decorate --all"
+alias gitdag="git log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order"
 
 alias zshrc="vim ~/dotfiles/zshrc.zsh"
 alias vimrc="vim ~/dotfiles/vimrc.vim"
