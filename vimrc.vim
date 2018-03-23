@@ -10,31 +10,30 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'easymotion/vim-easymotion'
-Plug 'matze/vim-move'
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-repeat'
-Plug 'gregsexton/matchtag'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'mxw/vim-jsx'
-Plug 'mileszs/ack.vim'
-Plug 'vim-scripts/mru.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/html5.vim'
-Plug 'vim-scripts/matchit.zip'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
-Plug 'leafgarland/typescript-vim'
-Plug 'ajh17/vimcompletesme'
+Plug 'dracula/vim' " dracula colorscheme
+Plug 'terryma/vim-multiple-cursors' " multiple cursor mode
+Plug 'matze/vim-move' " move blocks of text up and down
+Plug 'scrooloose/syntastic' " syntax checker
+Plug 'scrooloose/nerdtree' " file tree viewer
+Plug 'tpope/vim-surround' " surround text easily
+Plug 'scrooloose/nerdcommenter' " comment helper
+Plug 'airblade/vim-gitgutter' " git visual helpers
+Plug 'tpope/vim-repeat' " better .
+Plug 'gregsexton/matchtag' " html/xml/jsx tag matching
+Plug 'Xuyuanp/nerdtree-git-plugin' " git visual helpers in NERDTree
+Plug 'ctrlpvim/ctrlp.vim' " fuzzy file finder
+Plug 'vim-airline/vim-airline' " status bar
+Plug 'mxw/vim-jsx' " better jsx support
+Plug 'mileszs/ack.vim' " better grepping
+Plug 'vim-scripts/mru.vim' " most recently used files
+Plug 'pangloss/vim-javascript' " better js support
+Plug 'othree/html5.vim' " better html support
+Plug 'vim-scripts/matchit.zip' " better matching
+Plug 'alvan/vim-closetag' " autoclose tags
+Plug 'tpope/vim-fugitive' " git utilities
+Plug 'jiangmiao/auto-pairs' " autoclose ({[ etc
+Plug 'leafgarland/typescript-vim' " ts support
+Plug 'ajh17/vimcompletesme' " smart tab completion
 
 call plug#end()
 
@@ -214,8 +213,15 @@ endif
 " Ctrlp ignore
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
-" Color the 120th column to keep text a good width
+" Color the 100th column to keep text a good width
 set colorcolumn=100
+
+" Movr blocks of text up and down with
+let g:move_key_modifier = 0
+vmap zj <Plug>MoveBlockDown
+vmap zk <Plug>MoveBlockUp
+nmap zj <Plug>MoveLineDown
+nmap zk <Plug>MoveLineUp
 
 " Syntax identifier
 function! SynStack()
