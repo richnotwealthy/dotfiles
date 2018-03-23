@@ -34,6 +34,7 @@ Plug 'tpope/vim-fugitive' " git utilities
 Plug 'jiangmiao/auto-pairs' " autoclose ({[ etc
 Plug 'leafgarland/typescript-vim' " ts support
 Plug 'ajh17/vimcompletesme' " smart tab completion
+Plug 'ryanoasis/vim-devicons' " file icons
 
 call plug#end()
 
