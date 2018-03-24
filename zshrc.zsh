@@ -6,12 +6,15 @@
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(
-#    git
-#)
+#     history-substring-search
+#     colored-man-pages
+#     vi-mode
+#     tmux
+# )
 
-#source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
-# Functions
+### Functions ###
 # ls whenever cd
 cd() {
     builtin cd $@
@@ -28,6 +31,7 @@ histag() {
     builtin history 0 | ag $@
 }
 
+### Aliases ###
 alias gitlg="git log --graph --decorate --all"
 alias gitdag="git log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order"
 
