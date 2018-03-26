@@ -1,5 +1,8 @@
 # two-line prompt with git support and some nice colors to match dracula
 
+autoload -U colors && colors
+setopt promptsubst
+
 VERSIONING_PROMPT_CLEAN="› %{$fg[green]%}✔"
 VERSIONING_PROMPT_DIRTY="› %{$fg[yellow]%}✗"
 VERSIONING_PROMPT_PREFIX="%{$fg[cyan]%}‹"
@@ -27,7 +30,7 @@ local parse_git_dirty() {
 # if in a git repo, show dirty indicator + git branch
 local git_status_info() {
     local git_where="$(parse_git_branch)"
-    if [[ -n "$git_where" ]]; then
+    if in_git; then
         git_where="${git_where#(refs/heads/|tags/)}"
         echo "$VERSIONING_PROMPT_PREFIX${git_where}$(parse_git_dirty)$VERSIONING_PROMPT_SUFFIX"
     fi
