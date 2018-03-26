@@ -10,7 +10,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim' " dracula colorscheme
+Plug 'dracula/vim', { 'as': 'dracula' } " dracula colorscheme
 Plug 'terryma/vim-multiple-cursors' " multiple cursor mode
 Plug 'matze/vim-move' " move blocks of text up and down
 Plug 'scrooloose/syntastic' " syntax checker
