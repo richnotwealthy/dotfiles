@@ -44,10 +44,10 @@ else
 fi
 
 local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
-# local git_info="$(git_status_info)%{$reset_color%}"
+local git_info="$(git_status_info)%{$reset_color%}"
 
 RPS1="%B${return_code}%b"
 
 PROMPT="
-╭─ ${user_host} ${current_dir}
+╭─ ${user_host} ${current_dir} ${git_info}
 ╰─ ${user_symbol} "
