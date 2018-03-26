@@ -1,6 +1,6 @@
 # two-line prompt with git support and some nice colors to match dracula
 
-setopt promptsubst
+setopt PROMPT_SUBST
 
 VERSIONING_PROMPT_CLEAN="› %{$fg[green]%}✔"
 VERSIONING_PROMPT_DIRTY="› %{$fg[yellow]%}✗"
@@ -48,8 +48,12 @@ fi
 local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
 local git_branch='$(git_status_info)%{$reset_color%}'
 
-PROMPT="
+RPS1="%B${return_code}%b"
+
+prompt() {
+    PROMPT="
 ╭─ ${user_host} ${current_dir} ${git_branch}
 ╰─ ${user_symbol} "
+}
 
-RPS1="%B${return_code}%b"
+precmd_functions+=(prompt)
