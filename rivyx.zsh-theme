@@ -6,17 +6,17 @@ VERSIONING_PROMPT_PREFIX="%{$fg[cyan]%}‹"
 VERSIONING_PROMPT_SUFFIX="%{$reset_color%}"
 
 # check if inside a git repo
-local in_git() {
+in_git() {
     command git rev-parse --is-inside-work-tree &> /dev/null
 }
 
 # show git branch/tag, or name-rev if on detached head
-local parse_git_branch() {
+parse_git_branch() {
     (command git symbolic-ref -q HEAD || command git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
 }
 
 # check for dirty branch
-local parse_git_dirty() {
+parse_git_dirty() {
     if command git diff-index --quiet HEAD 2> /dev/null; then
         echo "$VERSIONING_PROMPT_CLEAN"
     else
@@ -25,7 +25,7 @@ local parse_git_dirty() {
 }
 
 # if in a git repo, show dirty indicator + git branch
-local git_status_info() {
+git_status_info() {
     local git_where="$(parse_git_branch)"
     if in_git; then
         git_where="${git_where#(refs/heads/|tags/)}"
