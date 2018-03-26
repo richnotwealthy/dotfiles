@@ -49,5 +49,5 @@ local git_info="$(git_status_info)%{$reset_color%}"
 RPS1="%B${return_code}%b"
 
 PROMPT="
-╭─ ${user_host} ${current_dir} ${git_info}
+╭─ ${user_host} ${current_dir}
 ╰─ ${user_symbol} "
