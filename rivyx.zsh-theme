@@ -1,6 +1,5 @@
 # two-line prompt with git support and some nice colors to match dracula
 
-autoload -U colors && colors
 setopt promptsubst
 
 VERSIONING_PROMPT_CLEAN="› %{$fg[green]%}✔"
