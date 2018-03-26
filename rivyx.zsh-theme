@@ -3,20 +3,20 @@
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 if [[ $UID -eq 0 ]]; then
-    local user_host='%{$fg[red]%}%n @ %m%{$reset_color%}'
-    local user_symbol='∷'
+local user_host="%{$fg[red]%}%n @ %m%{$reset_color%}"
+    local user_symbol="∷"
 else
-    local user_host='%{$fg[green]%}%n @ %m%{$reset_color%}'
-    # local user_symbol='λ'
-    # local user_symbol='∫'
-    # local user_symbol='∑'
-    # local user_symbol='∆'
-    # local user_symbol='»'
-    local user_symbol='∵'
+    local user_host="%{$fg[green]%}%n @ %m%{$reset_color%}"
+    # local user_symbol="λ"
+    # local user_symbol="∫"
+    # local user_symbol="∑"
+    # local user_symbol="∆"
+    # local user_symbol="»"
+    local user_symbol="∵"
 fi
 
-local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
-local git_branch='$(git_prompt_info)%{$reset_color%}'
+local current_dir="%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}"
+local git_branch="$(git_prompt_info)%{$reset_color%}"
 
 PROMPT="
 ╭─ ${user_host} ${current_dir} ${git_branch}
