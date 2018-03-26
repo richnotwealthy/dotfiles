@@ -52,7 +52,7 @@ RPS1="%B${return_code}%b"
 
 prompt() {
     PROMPT="
-╭─ ${user_host} ${current_dir} ${git_branch}
+╭─ ${user_host} ${current_dir}
 ╰─ ${user_symbol} "
 }
 
