@@ -1,5 +1,7 @@
 # two-line prompt with git support and some nice colors to match dracula
 
+setopt PROMPT_SUBST
+
 VERSIONING_PROMPT_CLEAN="› %{$fg[green]%}✔"
 VERSIONING_PROMPT_DIRTY="› %{$fg[yellow]%}✗"
 VERSIONING_PROMPT_PREFIX="%{$fg[cyan]%}‹"
