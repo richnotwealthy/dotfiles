@@ -1,8 +1,8 @@
 ### Setup ###
-export DOTFILES="$HOME/dotfiles"
+export dotfiles="$HOME/dotfiles"
 
 ### Theme ###
-source "$DOTFILES/rivyx.zsh-theme"
+source "$dotfiles/rivyx.zsh-theme"
 
 ### oh-my-zsh Plugins ###
 # plugins=(
@@ -35,6 +35,6 @@ alias gitlg="git log --graph --decorate --all"
 alias gitdag="git log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order"
 
 # dotfiles
-alias zshrc="vim $DOTFILES/zshrc.zsh"
-alias vimrc="vim $DOTFILES/vimrc.vim"
-alias tmuxconf="vim $DOTFILES/tmux.conf"
+alias zshrc="vim $dotfiles/zshrc.zsh"
+alias vimrc="vim $dotfiles/vimrc.vim"
+alias tmuxconf="vim $dotfiles/tmux.conf"
