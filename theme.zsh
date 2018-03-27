@@ -6,9 +6,9 @@ autoload -U colors && colors
 # single-quote functionality
 setopt PROMPT_SUBST
 
-VERSIONING_PROMPT_CLEAN="› %{$fg[green]%}✔"
-VERSIONING_PROMPT_DIRTY="› %{$fg[yellow]%}✗"
-VERSIONING_PROMPT_PREFIX="%{$fg[cyan]%}‹"
+VERSIONING_PROMPT_CLEAN=" %{$fg[green]%}✔"
+VERSIONING_PROMPT_DIRTY=" %{$fg[yellow]%}✗"
+VERSIONING_PROMPT_PREFIX="%{$fg[cyan]%}\ue0a0"
 VERSIONING_PROMPT_SUFFIX="%{$reset_color%}"
 
 # check if inside a git repo
