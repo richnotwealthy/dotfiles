@@ -2,7 +2,7 @@
 export dotfiles="$HOME/dotfiles"
 
 ### Theme ###
-source "$dotfiles/rivyx.zsh-theme"
+source "$dotfiles/theme.zsh"
 
 ### oh-my-zsh Plugins ###
 # plugins=(
