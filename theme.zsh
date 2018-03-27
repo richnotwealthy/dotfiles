@@ -49,7 +49,7 @@ else
     local user_symbol="∵"
 fi
 
-local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
+local current_dir="%{$fg_bold[blue]%}%-20<…<%~%<<%{$reset_color%}"
 local git_info='$(git_status_info)%{$reset_color%}'
 
 RPS1="%B${return_code}%b"
