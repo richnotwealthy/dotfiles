@@ -134,7 +134,7 @@ set textwidth=79
 set formatoptions=tcqrn1
 
 " Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:»\ ,eol:¬,space:·
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Save on loss of focus
