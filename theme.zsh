@@ -41,11 +41,17 @@ git_status_info() {
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]] || [[ -n "$SSH_CLIENT" ]]; then
+    local at_symbol="%{$fg[yellow]%}@%{$reset_color%}"
+else
+    local at_symbol="%{$fg[green]%}@%{$reset_color%}"
+fi
+
 if [[ $UID -eq 0 ]]; then
-local user_host="%{$fg[red]%}%n @ %m%{$reset_color%}"
+    local user_host="%{$fg[red]%}%n ${at_symbol} %{$fg[red]%}%m%{$reset_color%}"
     local user_symbol="∷"
 else
-    local user_host="%{$fg[green]%}%n @ %m%{$reset_color%}"
+    local user_host="%{$fg[green]%}%n ${at_symbol} %{$fg[green]%}%m%{$reset_color%}"
     local user_symbol="∵"
 fi
 

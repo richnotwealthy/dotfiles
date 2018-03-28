@@ -38,3 +38,4 @@ alias gitdag="git log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%
 alias zshrc="vim $dotfiles/zshrc.zsh"
 alias vimrc="vim $dotfiles/vimrc.vim"
 alias tmuxconf="vim $dotfiles/tmux.conf"
+alias themezsh="vim $dotfiles/theme.zsh"
