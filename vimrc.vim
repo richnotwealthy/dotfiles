@@ -41,8 +41,9 @@ call plug#end()
 
 " Colors
 set t_Co=256
+let g:dracula_italic = 0
 syntax on
-color dracula
+colorscheme dracula
 let g:airline_theme='dracula'
 
 " JS Syntax
