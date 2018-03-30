@@ -40,8 +40,11 @@ Plug 'vim-ruby/vim-ruby' " better ruby support
 call plug#end()
 
 " Colors
+" First, recognize truecolor overrides
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 set t_Co=256
-let g:dracula_italic = 0
 syntax on
 colorscheme dracula
 let g:airline_theme='dracula'
