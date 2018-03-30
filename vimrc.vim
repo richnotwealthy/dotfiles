@@ -36,6 +36,7 @@ Plug 'leafgarland/typescript-vim' " ts support
 Plug 'ajh17/vimcompletesme' " smart tab completion
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'vim-ruby/vim-ruby' " better ruby support
+Plug 'tpope/vim-endwise' " 'end' blocks automatically for ruby, vimscript, etc
 
 call plug#end()
 
