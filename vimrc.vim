@@ -47,6 +47,7 @@ set termguicolors
 set t_Co=256
 syntax on
 colorscheme dracula
+highlight Normal ctermbg=None
 let g:airline_theme='dracula'
 
 " JS Syntax
