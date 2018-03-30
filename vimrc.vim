@@ -46,6 +46,7 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set t_Co=256
 syntax on
+let g:dracula_italic = 0
 colorscheme dracula
 highlight Normal ctermbg=None
 let g:airline_theme='dracula'

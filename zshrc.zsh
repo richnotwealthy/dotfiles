@@ -1,6 +1,6 @@
 ### Setup ###
 export dotfiles="$HOME/dotfiles"
-export TERM=xterm-256color-italic
+export TERM=xterm-256color
 
 ### Theme ###
 source "$dotfiles/theme.zsh"
