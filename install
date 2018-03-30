@@ -1,9 +1,6 @@
 mv ~/.vimrc ~/.vimrc.old
 mv ~/.tmux.conf ~/.tmux.conf.old
 
-tic -x terminfo/xterm-256color-italic.terminfo
-tic -x terminfo/tmux-256color.terminfo
-
 printf "so $HOME/dotfiles/vimrc.vim" > ~/.vimrc
 printf "source-file $HOME/dotfiles/tmux.conf" > ~/.tmux.conf
 printf "source '$HOME/dotfiles/zshrc.zsh'" >> ~/.zshrc
