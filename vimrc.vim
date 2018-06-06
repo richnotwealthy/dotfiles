@@ -21,7 +21,6 @@ Plug 'airblade/vim-gitgutter' " git visual helpers
 Plug 'tpope/vim-repeat' " better .
 Plug 'gregsexton/matchtag' " html/xml/jsx tag matching
 Plug 'Xuyuanp/nerdtree-git-plugin' " git visual helpers in NERDTree
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy file finder
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'mxw/vim-jsx' " better jsx support
 Plug 'mileszs/ack.vim' " better grepping
@@ -37,6 +36,7 @@ Plug 'ajh17/vimcompletesme' " smart tab completion
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'vim-ruby/vim-ruby' " better ruby support
 Plug 'tpope/vim-endwise' " 'end' blocks automatically for ruby, vimscript, etc
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' } " fuzzy finder
 
 call plug#end()
 
@@ -207,16 +207,7 @@ if executable('ag')
 
     " Grep
     set grepprg=ag\ --nogroup\ --nocolor
-
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command='ag --literal --files-with-matches --nocolor --hidden --ignore .git .hg -g "" %s'
-
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
 endif
-
-" Ctrlp ignore
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|hg))$'
 
 " Color the 100th column to keep text a good width
 set colorcolumn=100
