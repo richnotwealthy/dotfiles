@@ -209,14 +209,14 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command='ag --literal --files-with-matches --nocolor --hidden --ignore .git -g "" %s'
+    let g:ctrlp_user_command='ag --literal --files-with-matches --nocolor --hidden --ignore .git .hg -g "" %s'
 
     " ag is fast enough that CtrlP doesn't need to cache
     let g:ctrlp_use_caching = 0
 endif
 
 " Ctrlp ignore
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|hg))$'
 
 " Color the 100th column to keep text a good width
 set colorcolumn=100
