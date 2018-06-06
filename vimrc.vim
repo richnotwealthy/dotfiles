@@ -17,7 +17,7 @@ Plug 'scrooloose/syntastic' " syntax checker
 Plug 'scrooloose/nerdtree' " file tree viewer
 Plug 'tpope/vim-surround' " surround text easily
 Plug 'scrooloose/nerdcommenter' " comment helper
-Plug 'airblade/vim-gitgutter' " git visual helpers
+Plug 'mhinz/vim-signify' " source control gutter
 Plug 'tpope/vim-repeat' " better .
 Plug 'gregsexton/matchtag' " html/xml/jsx tag matching
 Plug 'Xuyuanp/nerdtree-git-plugin' " git visual helpers in NERDTree
