@@ -78,6 +78,14 @@ function hg_dirty {
     hg_dirty_choose $VERSIONING_PROMPT_DIRTY $VERSIONING_PROMPT_CLEAN
 }
 
+function virtualenv_prompt_info(){
+    [[ -n ${VIRTUAL_ENV} ]] || return
+    echo "(${VIRTUAL_ENV:t}) "
+}
+
+# disables prompt mangling in virtual_env/bin/activate
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]] || [[ -n "$SSH_CLIENT" ]]; then
@@ -96,9 +104,10 @@ fi
 
 local current_dir="%{$fg_bold[blue]%}%-20<…<%~%<<%{$reset_color%}"
 local git_info='$(git_status_info)$(hg_prompt_info)%{$reset_color%}'
+local venv_info='%{$fg[yellow]%}$(virtualenv_prompt_info)%{$reset_color%}'
 
 RPS1="%B${return_code}%b"
 
 PROMPT="
-╭─ ${user_host} ${current_dir} ${git_info}
+╭─ ${user_host} ${venv_info}${current_dir} ${git_info}
 ╰─ ${user_symbol} "

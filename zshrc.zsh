@@ -6,10 +6,12 @@ source "$dotfiles/theme.zsh"
 
 ### oh-my-zsh Plugins ###
 # plugins=(
+#     git
 #     history-substring-search
 #     colored-man-pages
 #     vi-mode
 #     tmux
+#     osx
 # )
 
 ### Functions ###
