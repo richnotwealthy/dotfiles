@@ -134,7 +134,7 @@ map <leader><space> :let @/=''<cr> " clear search
 
 " Whitespace
 set wrap
-set textwidth=79
+set textwidth=99
 set formatoptions=tcqrn1
 
 " Visualize tabs and newlines
