@@ -41,3 +41,5 @@ alias zshrc="vim $dotfiles/zshrc.zsh"
 alias vimrc="vim $dotfiles/vimrc.vim"
 alias tmuxconf="vim $dotfiles/tmux.conf"
 alias themezsh="vim $dotfiles/theme.zsh"
+alias lzshrc='vim ~/.zshrc'
+alias rfzshrc='source ~/.zshrc'
