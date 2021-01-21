@@ -11,7 +11,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' } " dracula colorscheme
-Plug 'terryma/vim-multiple-cursors' " multiple cursor mode
 Plug 'matze/vim-move' " move blocks of text up and down
 Plug 'scrooloose/syntastic' " syntax checker
 Plug 'scrooloose/nerdtree' " file tree viewer
@@ -22,7 +21,6 @@ Plug 'tpope/vim-repeat' " better .
 Plug 'gregsexton/matchtag' " html/xml/jsx tag matching
 Plug 'Xuyuanp/nerdtree-git-plugin' " git visual helpers in NERDTree
 Plug 'vim-airline/vim-airline' " status bar
-Plug 'mxw/vim-jsx' " better jsx support
 Plug 'mileszs/ack.vim' " better grepping
 Plug 'vim-scripts/mru.vim' " most recently used files
 Plug 'pangloss/vim-javascript' " better js support
@@ -31,11 +29,8 @@ Plug 'vim-scripts/matchit.zip' " better matching
 Plug 'alvan/vim-closetag' " autoclose tags
 Plug 'tpope/vim-fugitive' " git utilities
 Plug 'jiangmiao/auto-pairs' " autoclose ({[ etc
-Plug 'leafgarland/typescript-vim' " ts support
 Plug 'ajh17/vimcompletesme' " smart tab completion
 Plug 'ryanoasis/vim-devicons' " file icons
-Plug 'vim-ruby/vim-ruby' " better ruby support
-Plug 'tpope/vim-endwise' " 'end' blocks automatically for ruby, vimscript, etc
 Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' } " fuzzy finder
 
 call plug#end()

@@ -12,7 +12,15 @@ source "$dotfiles/theme.zsh"
 #     vi-mode
 #     tmux
 #     osx
+#     colorize
+#     mercurial
+#     zsh-navigation-tools
+#     zsh_reload
 # )
+
+# znt_list_bold=0
+# znt_list_colorpair="15/235"
+# znt_list_border=1
 
 ### Functions ###
 # ls whenever cd
@@ -42,4 +50,3 @@ alias vimrc="vim $dotfiles/vimrc.vim"
 alias tmuxconf="vim $dotfiles/tmux.conf"
 alias themezsh="vim $dotfiles/theme.zsh"
 alias lzshrc='vim ~/.zshrc'
-alias rfzshrc='source ~/.zshrc'
