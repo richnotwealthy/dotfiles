@@ -15,7 +15,6 @@ source "$dotfiles/theme.zsh"
 #     colorize
 #     mercurial
 #     zsh-navigation-tools
-#     zsh_reload
 # )
 
 # znt_list_bold=0
