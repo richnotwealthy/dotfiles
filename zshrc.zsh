@@ -23,10 +23,10 @@ source "$dotfiles/theme.zsh"
 
 ### Functions ###
 # ls whenever cd
-cd() {
-    builtin cd $@
-    ls
-}
+# cd() {
+#     builtin cd $@
+#     ls
+# }
 
 # Git add all and commit with message
 gaacm() {

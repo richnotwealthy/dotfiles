@@ -29,7 +29,6 @@ Plug 'vim-scripts/matchit.zip' " better matching
 Plug 'alvan/vim-closetag' " autoclose tags
 Plug 'tpope/vim-fugitive' " git utilities
 Plug 'jiangmiao/auto-pairs' " autoclose ({[ etc
-Plug 'ajh17/vimcompletesme' " smart tab completion
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' } " fuzzy finder
 
