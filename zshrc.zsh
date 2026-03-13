@@ -53,4 +53,4 @@ znt_list_colorpair="15/235"
 znt_list_border=1
 
 ### Startup ###
-command -v fortune &> /dev/null && command -v cowsay &> /dev/null && fortune | cowsay -r
+command -v fortune &> /dev/null && command -v cowsay &> /dev/null && { fortune | cowsay -r 2>/dev/null || fortune | cowsay -f "$(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1)"; }
