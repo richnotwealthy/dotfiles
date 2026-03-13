@@ -1,10 +1,52 @@
-mv ~/.vimrc ~/.vimrc.old
-mv ~/.tmux.conf ~/.tmux.conf.old
+#!/bin/bash
+set -e
 
-printf "so $HOME/dotfiles/vimrc.vim" > ~/.vimrc
-printf "source-file $HOME/dotfiles/tmux.conf" > ~/.tmux.conf
-printf "source '$HOME/dotfiles/zshrc.zsh'" >> ~/.zshrc
+DOTFILES="$HOME/dotfiles"
 
-echo "Success!"
-echo ".zshrc, .vimrc, and .tmux.conf files linked to $HOME/dotfiles"
-echo
+echo "Installing dotfiles..."
+
+# Install dependencies
+if command -v apt-get &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y zsh vim tmux git silversearcher-ag fortune-mod cowsay
+fi
+
+# Install oh-my-zsh if missing
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+# Back up existing configs
+for f in ~/.vimrc ~/.tmux.conf ~/.zshrc; do
+    if [ -f "$f" ] && [ ! -L "$f" ]; then
+        mv "$f" "$f.old"
+        echo "Backed up $f to $f.old"
+    fi
+done
+
+# Symlink vim and tmux configs
+ln -sf "$DOTFILES/vimrc.vim" ~/.vimrc
+ln -sf "$DOTFILES/tmux.conf" ~/.tmux.conf
+
+# Write zshrc stub (supports local additions)
+cat > ~/.zshrc << 'EOF'
+export PATH=$HOME/.local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
+
+source "$HOME/dotfiles/zshrc.zsh"
+EOF
+
+# Git identity
+git config --global user.name "Richie Messina"
+git config --global user.email "messina.rd@gmail.com"
+
+# Set zsh as default shell
+if [ "$SHELL" != "$(which zsh)" ]; then
+    chsh -s "$(which zsh)"
+    echo "Default shell changed to zsh"
+fi
+
+echo ""
+echo "Done! Configs linked to $DOTFILES"
+echo "Start a new zsh session to see changes."

@@ -4,32 +4,21 @@ export dotfiles="$HOME/dotfiles"
 ### Theme ###
 source "$dotfiles/theme.zsh"
 
-### oh-my-zsh Plugins ###
-# plugins=(
-#     git
-#     history-substring-search
-#     colored-man-pages
-#     vi-mode
-#     tmux
-#     colorize
-#     zsh-navigation-tools
-# )
+### oh-my-zsh ###
+COMPLETION_WAITING_DOTS="true"
 
-# history-substring-search bindings
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
+plugins=(
+    git
+    history-substring-search
+    colored-man-pages
+    tmux
+    colorize
+    zsh-navigation-tools
+)
 
-# zsh-navigation-tools display settings
-# znt_list_bold=0
-# znt_list_colorpair="15/235"
-# znt_list_border=1
+source $ZSH/oh-my-zsh.sh
 
 ### Functions ###
-# ls whenever cd
-# cd() {
-#     builtin cd $@
-#     ls
-# }
 
 # Git add all and commit with message
 gaacm() {
@@ -52,3 +41,16 @@ alias vimrc="vim $dotfiles/vimrc.vim"
 alias tmuxconf="vim $dotfiles/tmux.conf"
 alias themezsh="vim $dotfiles/theme.zsh"
 alias lzshrc='vim ~/.zshrc'
+
+### Plugin Settings ###
+# history-substring-search bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# zsh-navigation-tools display settings
+znt_list_bold=0
+znt_list_colorpair="15/235"
+znt_list_border=1
+
+### Startup ###
+command -v fortune &> /dev/null && command -v cowsay &> /dev/null && fortune | cowsay -r

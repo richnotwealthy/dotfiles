@@ -1,0 +1,41 @@
+#!/bin/bash
+set -e
+
+echo "Installing tools..."
+
+# Eternal Terminal
+if ! command -v et &> /dev/null; then
+    echo "Installing Eternal Terminal..."
+    sudo add-apt-repository -y ppa:jgmath2000/et
+    sudo apt-get update
+    sudo apt-get install -y et
+else
+    echo "Eternal Terminal already installed"
+fi
+
+# Node.js via fnm
+if ! command -v fnm &> /dev/null; then
+    echo "Installing fnm..."
+    curl -fsSL https://fnm.vercel.app/install | bash
+    export PATH="$HOME/.local/share/fnm:$PATH"
+    eval "$(fnm env)"
+fi
+
+if ! command -v node &> /dev/null; then
+    echo "Installing Node.js..."
+    fnm install --lts
+    fnm default lts-latest
+else
+    echo "Node.js already installed: $(node --version)"
+fi
+
+# Claude Code
+if ! command -v claude &> /dev/null; then
+    echo "Installing Claude Code..."
+    npm install -g @anthropic-ai/claude-code
+else
+    echo "Claude Code already installed"
+fi
+
+echo ""
+echo "Done! Run 'claude' to authenticate."
