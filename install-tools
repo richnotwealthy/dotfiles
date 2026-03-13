@@ -18,7 +18,7 @@ if ! command -v fnm &> /dev/null; then
     echo "Installing fnm..."
     curl -fsSL https://fnm.vercel.app/install | bash
     export PATH="$HOME/.local/share/fnm:$PATH"
-    eval "$(fnm env)"
+    eval "$(fnm env --shell bash)"
 fi
 
 if ! command -v node &> /dev/null; then
