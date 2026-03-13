@@ -12,25 +12,17 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' } " dracula colorscheme
 Plug 'matze/vim-move' " move blocks of text up and down
-Plug 'scrooloose/syntastic' " syntax checker
 Plug 'scrooloose/nerdtree' " file tree viewer
 Plug 'tpope/vim-surround' " surround text easily
 Plug 'scrooloose/nerdcommenter' " comment helper
 Plug 'mhinz/vim-signify' " source control gutter
 Plug 'tpope/vim-repeat' " better .
-Plug 'gregsexton/matchtag' " html/xml/jsx tag matching
 Plug 'Xuyuanp/nerdtree-git-plugin' " git visual helpers in NERDTree
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'mileszs/ack.vim' " better grepping
 Plug 'vim-scripts/mru.vim' " most recently used files
-Plug 'pangloss/vim-javascript' " better js support
-Plug 'othree/html5.vim' " better html support
-Plug 'vim-scripts/matchit.zip' " better matching
-Plug 'alvan/vim-closetag' " autoclose tags
 Plug 'tpope/vim-fugitive' " git utilities
-Plug 'jiangmiao/auto-pairs' " autoclose ({[ etc
 Plug 'ryanoasis/vim-devicons' " file icons
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' } " fuzzy finder
 
 call plug#end()
 
@@ -42,18 +34,11 @@ colorscheme dracula
 highlight Normal ctermbg=None
 let g:airline_theme='dracula'
 
-" JS Syntax
-hi link jsClassProperty jsClassFuncName
-hi link jsFuncCall jsClassFuncName
-
-"  leader key
+" Leader key
 let mapleader = ","
 
 " Security
 set modelines=0
-
-" Show relative line numbers
-" set relativenumber
 
 " Set split to below and right, more natural
 set splitbelow
@@ -76,12 +61,6 @@ set softtabstop=4
 set expandtab
 set autoindent
 set smartindent
-
-function! SetTab2()
-    set tabstop=2
-    set shiftwidth=2
-    set softtabstop=2
-endfunction
 
 " Visual line movement instead of physical
 nnoremap k gk
@@ -135,9 +114,6 @@ set formatoptions=tcqrn1
 set listchars=tab:»\ ,eol:¬,space:·
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Save on loss of focus
-" au FocusLost * :wa
-
 " Clean up trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -173,23 +149,11 @@ set mouse=a
 " Reload unchanged file buffers if the file changes
 set autoread
 
-" JSX for .jsx and .js files
-let g:jsx_ext_required = 0
-
 " Better movement between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" TODO: Tag colors
-hi link xmlEndTag xmlTag
-hi link htmlEndTag htmlTag
-hi link htmlTagN htmlTag
-hi link htmlTagName htmlTag
-
-" Autoclose extensions
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
 
 " Ack
 map <leader>a :Ack!
@@ -206,20 +170,12 @@ endif
 " Color the 100th column to keep text a good width
 set colorcolumn=100
 
-" Movr blocks of text up and down with
+" Move blocks of text up and down
 let g:move_key_modifier = 0
 vmap zj <Plug>MoveBlockDown
 vmap zk <Plug>MoveBlockUp
 nmap zj <Plug>MoveLineDown
 nmap zk <Plug>MoveLineUp
-
-" Syntax identifier
-function! SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " Backups, swaps, and undo file locations outside of working dir
 if !isdirectory($HOME.'/.vim/swaps')
