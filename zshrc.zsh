@@ -11,12 +11,15 @@ source "$dotfiles/theme.zsh"
 #     colored-man-pages
 #     vi-mode
 #     tmux
-#     osx
 #     colorize
-#     mercurial
 #     zsh-navigation-tools
 # )
 
+# history-substring-search bindings
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
+
+# zsh-navigation-tools display settings
 # znt_list_bold=0
 # znt_list_colorpair="15/235"
 # znt_list_border=1
