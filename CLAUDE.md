@@ -28,6 +28,6 @@ Follow `references/style.md` for all shell scripts:
 
 ## Key details
 
-- The user uses both git and Mercurial (hg at work) — do not remove hg support
+- The user uses both git and Mercurial — do not remove hg support
 - `install` preserves machine defaults from existing `.zshrc`/`.bashrc` into `.zshrc.defaults`
 - vim mappings use `nnoremap` (not `map`) unless intentionally chaining into `<Plug>` mappings
