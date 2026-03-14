@@ -4,14 +4,14 @@ Portable dotfiles for new machines. Dracula theme throughout.
 
 ## Repo structure
 
-- `install` — main installer: deps, oh-my-zsh, symlinks, shell defaults, git identity
-- `install-tools` — optional extras: Eternal Terminal, fnm/Node.js, Claude Code
-- `cloud-init.sh` — cloud instance bootstrap (not executable, piped via cloud-init)
 - `zshrc.zsh` — zsh config (plugins, aliases, functions)
 - `theme.zsh` — two-line prompt with git and hg support
-- `banner.zsh` — login banner (cowsay or starfield)
 - `vimrc.vim` — vim config with vim-plug
 - `tmux.conf` — tmux config (prefix is C-a)
+- `scripts/install` — main installer: deps, oh-my-zsh, symlinks, shell defaults, git identity
+- `scripts/install-tools` — optional extras: Eternal Terminal, fnm/Node.js, Claude Code
+- `scripts/cloud-init.sh` — cloud instance bootstrap (not executable, piped via cloud-init)
+- `scripts/banner.zsh` — login banner (cowsay or starfield)
 - `terminals/` — terminal emulator configs (iTerm, Terminator)
 - `references/style.md` — shell script style guide
 

@@ -8,5 +8,5 @@ git clone https://github.com/richnotwealthy/dotfiles.git
 
 # Run install scripts
 cd dotfiles
-./install
-./install-tools
+./scripts/install
+./scripts/install-tools

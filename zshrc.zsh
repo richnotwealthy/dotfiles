@@ -53,4 +53,4 @@ znt_list_colorpair="15/235"
 znt_list_border=1
 
 ### Startup ###
-source "$dotfiles/banner.zsh"
+source "$dotfiles/scripts/banner.zsh"

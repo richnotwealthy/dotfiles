@@ -113,4 +113,4 @@ good "${BOLD}Done!${RESET} Configs linked to $DOTFILES."
 echo
 echo "  Next steps:"
 echo "    1. Start a new zsh session to see changes"
-echo -e "    2. Run ${BOLD}./install-tools${RESET} for extra tooling"
+echo -e "    2. Run ${BOLD}./scripts/install-tools${RESET} for extra tooling"
