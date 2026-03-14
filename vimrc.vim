@@ -103,7 +103,7 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+nnoremap <leader><space> :let @/=''<cr> " clear search
 
 " Whitespace
 set wrap
@@ -112,21 +112,18 @@ set formatoptions=tcqrn1
 
 " Visualize tabs and newlines
 set listchars=tab:»\ ,eol:¬,space:·
-map <leader>l :set list!<CR> " Toggle tabs and EOL
+nnoremap <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Clean up trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Start NERDTree if no file specified
+" Start NERDTree if no file specified, or open with directories
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Open NERDTree with directories
-autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Open NERDTree
-map <leader>. :NERDTreeToggle<CR>
+nnoremap <leader>. :NERDTreeToggle<CR>
 
 " Reveal current file in NERDTree
 nmap <leader>/ :NERDTreeFind<CR>
@@ -156,7 +153,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Ack
-map <leader>a :Ack!
+nnoremap <leader>a :Ack!
 
 " If The Silver Searcher is installed, use it
 if executable('ag')

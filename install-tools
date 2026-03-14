@@ -5,10 +5,14 @@ echo "Installing tools..."
 
 # Eternal Terminal
 if ! command -v et &> /dev/null; then
-    echo "Installing Eternal Terminal..."
-    sudo add-apt-repository -y ppa:jgmath2000/et
-    sudo apt-get update
-    sudo apt-get install -y et
+    if command -v apt-get &> /dev/null; then
+        echo "Installing Eternal Terminal..."
+        sudo add-apt-repository -y ppa:jgmath2000/et
+        sudo apt-get update
+        sudo apt-get install -y et
+    else
+        echo "Skipping Eternal Terminal (apt-get not found)"
+    fi
 else
     echo "Eternal Terminal already installed"
 fi

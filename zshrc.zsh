@@ -16,7 +16,7 @@ plugins=(
     zsh-navigation-tools
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 ### Functions ###
 
@@ -27,7 +27,7 @@ gaacm() {
 
 # Search all history
 histag() {
-    builtin history 0 | ag $@
+    builtin history 0 | ag "$@"
 }
 
 ### Aliases ###

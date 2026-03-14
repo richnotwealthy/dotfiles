@@ -42,8 +42,8 @@ git config --global user.name "Richie Messina"
 git config --global user.email "messina.rd@gmail.com"
 
 # Set zsh as default shell
-if [ "$SHELL" != "$(which zsh)" ]; then
-    chsh -s "$(which zsh)"
+if [ "$SHELL" != "$(command -v zsh)" ]; then
+    chsh -s "$(command -v zsh)"
     echo "Default shell changed to zsh"
 fi
 

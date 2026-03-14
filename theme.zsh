@@ -1,9 +1,9 @@
-# two-line prompt with git support and some nice colors to match dracula
+# two-line prompt with git/hg support and some nice colors to match dracula
 
 # enable colors
 autoload -U colors && colors
 
-# single-quote functionality
+# allow command substitution in prompts
 setopt PROMPT_SUBST
 
 VERSIONING_PROMPT_CLEAN=" %{$fg[green]%}✔"
@@ -21,9 +21,9 @@ function parse_git_branch() {
     (command git symbolic-ref -q HEAD || command git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
 }
 
-# check for dirty branch
+# check for dirty or untracked files
 function parse_git_dirty() {
-    if command git diff-index --quiet HEAD 2> /dev/null; then
+    if [[ -z "$(command git status --porcelain 2> /dev/null)" ]]; then
         echo "$VERSIONING_PROMPT_CLEAN"
     else
         echo "$VERSIONING_PROMPT_DIRTY"
@@ -32,50 +32,33 @@ function parse_git_dirty() {
 
 # if in a git repo, show dirty indicator + git branch
 function git_status_info() {
+    in_git || return
     local git_where="$(parse_git_branch)"
-    if in_git; then
-        git_where="${git_where#(refs/heads/|tags/)}"
-        echo "$VERSIONING_PROMPT_PREFIX${git_where}$(parse_git_dirty)$VERSIONING_PROMPT_SUFFIX"
-    fi
+    git_where="${git_where#(refs/heads/|tags/)}"
+    echo "$VERSIONING_PROMPT_PREFIX${git_where}$(parse_git_dirty)$VERSIONING_PROMPT_SUFFIX"
 }
 
+# check if inside a mercurial repo
 function in_hg() {
-  if [[ -d .hg ]] || $(hg summary > /dev/null 2>&1); then
-      echo 1
-  fi
+    command hg root &> /dev/null
 }
 
 function hg_get_branch_name() {
-    if [ $(in_hg) ]; then
-        echo $(hg identify -i)
+    command hg identify -i 2> /dev/null
+}
+
+function hg_dirty() {
+    if command hg status 2> /dev/null | command grep -Eq '^\s*[ACDIM!?L]'; then
+        echo "$VERSIONING_PROMPT_DIRTY"
+    else
+        echo "$VERSIONING_PROMPT_CLEAN"
     fi
 }
 
-function hg_prompt_info {
-    if [ $(in_hg) ]; then
-        _DISPLAY=$(hg_get_branch_name)
-        echo "$ZSH_PROMPT_BASE_COLOR$VERSIONING_PROMPT_PREFIX\
-$ZSH_THEME_REPO_NAME_COLOR$_DISPLAY$ZSH_PROMPT_BASE_COLOR\
-$ZSH_PROMPT_BASE_COLOR$(hg_dirty)$VERSIONING_PROMPT_SUFFIX$ZSH_PROMPT_BASE_COLOR"
-        unset _DISPLAY
-    fi
-}
-
-function hg_dirty_choose {
-    if [ $(in_hg) ]; then
-        hg status 2> /dev/null | command grep -Eq '^\s*[ACDIM!?L]'
-        if [ $pipestatus[-1] -eq 0 ]; then
-            # Grep exits with 0 when "One or more lines were selected", return "dirty".
-            echo $1
-        else
-            # Otherwise, no lines were found, or an error occurred. Return clean.
-            echo $2
-        fi
-    fi
-}
-
-function hg_dirty {
-    hg_dirty_choose $VERSIONING_PROMPT_DIRTY $VERSIONING_PROMPT_CLEAN
+function hg_prompt_info() {
+    in_hg || return
+    local _DISPLAY="$(hg_get_branch_name)"
+    echo "$VERSIONING_PROMPT_PREFIX${_DISPLAY}$(hg_dirty)$VERSIONING_PROMPT_SUFFIX"
 }
 
 function virtualenv_prompt_info(){
@@ -88,7 +71,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]] || [[ -n "$SSH_CLIENT" ]]; then
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]] || [[ -n "$SSH_CONNECTION" ]]; then
     local at_symbol="%{$fg[yellow]%}@%{$reset_color%}"
 else
     local at_symbol="%{$fg[green]%}@%{$reset_color%}"
