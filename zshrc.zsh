@@ -1,3 +1,21 @@
+# Machine defaults (prefer .zshrc.defaults, fall back to .bashrc.defaults)
+if [ -f "$HOME/.zshrc.defaults" ]; then
+    source "$HOME/.zshrc.defaults"
+elif [ -f "$HOME/.bashrc.defaults" ]; then
+    _source_bash_defaults() {
+        emulate -L sh
+        shopt()    { :; }
+        complete() { :; }
+        bind()     { :; }
+        source "$HOME/.bashrc.defaults" 2>/dev/null
+    }
+    _source_bash_defaults
+    unfunction _source_bash_defaults
+fi
+
+export PATH=$HOME/.local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
+
 ### Setup ###
 export dotfiles="$HOME/dotfiles"
 
@@ -40,7 +58,7 @@ alias zshrc="vim $dotfiles/zshrc.zsh"
 alias vimrc="vim $dotfiles/vimrc.vim"
 alias tmuxconf="vim $dotfiles/tmux.conf"
 alias themezsh="vim $dotfiles/theme.zsh"
-alias lzshrc='vim ~/.zshrc'
+alias lzshrc='vim ~/.zshrc.local'
 
 ### Plugin Settings ###
 # history-substring-search bindings
@@ -54,3 +72,8 @@ znt_list_border=1
 
 ### Startup ###
 source "$dotfiles/scripts/banner.zsh"
+
+# Local overrides (not tracked by dotfiles)
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi

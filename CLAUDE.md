@@ -4,7 +4,7 @@ Portable dotfiles for new machines. Dracula theme throughout.
 
 ## Repo structure
 
-- `zshrc.zsh` — zsh config (plugins, aliases, functions)
+- `zshrc.zsh` — zsh config, symlinked as `~/.zshrc` (machine defaults, plugins, aliases, functions, local overrides)
 - `theme.zsh` — two-line prompt with git and hg support
 - `vimrc.vim` — vim config with vim-plug
 - `tmux.conf` — tmux config (prefix is C-a)
@@ -29,5 +29,8 @@ Follow `references/style.md` for all shell scripts:
 ## Key details
 
 - The user uses both git and Mercurial — do not remove hg support
-- `install` preserves machine defaults from existing `.zshrc`/`.bashrc` into `.zshrc.defaults`
+- Both `install` and `install-tools` must be fully idempotent — safe to re-run at any time
+- `install` preserves machine defaults on first run only: `.zshrc` → `.zshrc.defaults`, `.bashrc` → `.bashrc.defaults` (never touched again)
+- `zshrc.zsh` sources defaults at the top (with bash-compat shim for `.bashrc.defaults`) and `~/.zshrc.local` at the bottom for machine-specific overrides
+- All config files (`.zshrc`, `.vimrc`, `.tmux.conf`) are symlinked to the repo, not generated
 - vim mappings use `nnoremap` (not `map`) unless intentionally chaining into `<Plug>` mappings

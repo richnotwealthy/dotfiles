@@ -19,10 +19,22 @@ info "${BOLD}Installing dotfiles ...${RESET}"
 
 # --- dependencies ---
 
+PACKAGES=(zsh vim tmux git silversearcher-ag fortune-mod cowsay)
+
 if command -v apt-get &> /dev/null; then
-    info "Installing packages via ${BOLD}apt-get${RESET} ..."
-    sudo apt-get update
-    sudo apt-get install -y zsh vim tmux git silversearcher-ag fortune-mod cowsay
+    missing=()
+    for pkg in "${PACKAGES[@]}"; do
+        if ! dpkg -s "$pkg" &> /dev/null; then
+            missing+=("$pkg")
+        fi
+    done
+    if [ ${#missing[@]} -gt 0 ]; then
+        info "Installing ${BOLD}${missing[*]}${RESET} via apt-get ..."
+        sudo apt-get update
+        sudo apt-get install -y "${missing[@]}"
+    else
+        good "packages: all already installed"
+    fi
 fi
 
 echo
@@ -42,6 +54,18 @@ fi
 
 echo
 
+# --- preserve machine defaults (first run only) ---
+
+if [ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ] && [ ! -f "$HOME/.zshrc.defaults" ]; then
+    cp "$HOME/.zshrc" "$HOME/.zshrc.defaults"
+    good ".zshrc.defaults: preserved from ${BOLD}.zshrc${RESET}"
+fi
+
+if [ -f "$HOME/.bashrc" ] && [ ! -f "$HOME/.bashrc.defaults" ]; then
+    cp "$HOME/.bashrc" "$HOME/.bashrc.defaults"
+    good ".bashrc.defaults: preserved from ${BOLD}.bashrc${RESET}"
+fi
+
 # --- back up existing configs ---
 
 for f in ~/.vimrc ~/.tmux.conf ~/.zshrc; do
@@ -59,32 +83,8 @@ good ".vimrc: linked to ${BOLD}$DOTFILES/vimrc.vim${RESET}"
 ln -sf "$DOTFILES/tmux.conf" ~/.tmux.conf
 good ".tmux.conf: linked to ${BOLD}$DOTFILES/tmux.conf${RESET}"
 
-echo
-
-# --- preserve machine defaults ---
-
-if [ -f "$HOME/.zshrc.old" ]; then
-    cp "$HOME/.zshrc.old" "$HOME/.zshrc.defaults"
-    good ".zshrc.defaults: preserved from ${BOLD}.zshrc.old${RESET}"
-elif [ -f "$HOME/.bashrc" ] && [ ! -f "$HOME/.zshrc.defaults" ]; then
-    cp "$HOME/.bashrc" "$HOME/.zshrc.defaults"
-    good ".zshrc.defaults: preserved from ${BOLD}.bashrc${RESET}"
-fi
-
-# --- write zshrc stub ---
-
-cat > ~/.zshrc << 'EOF'
-# Machine defaults (preserved from original .zshrc or .bashrc)
-if [ -f "$HOME/.zshrc.defaults" ]; then
-    source "$HOME/.zshrc.defaults"
-fi
-
-export PATH=$HOME/.local/bin:$PATH
-export ZSH="$HOME/.oh-my-zsh"
-
-source "$HOME/dotfiles/zshrc.zsh"
-EOF
-good ".zshrc: written with dotfiles source"
+ln -sf "$DOTFILES/zshrc.zsh" ~/.zshrc
+good ".zshrc: linked to ${BOLD}$DOTFILES/zshrc.zsh${RESET}"
 
 echo
 
