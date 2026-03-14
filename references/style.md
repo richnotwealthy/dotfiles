@@ -21,13 +21,13 @@ Three terse one-liner log functions using a `::` prefix as the visual marker (in
 info()  { echo -e "${CYAN}::${RESET} $*"; }
 warn()  { echo -e "${YELLOW}::${RESET} $*"; }
 good()  { echo -e "${GREEN}::${RESET} $*"; }
+error() { echo -e "${RED}::${RESET} $*" >&2; }
 ```
 
 - **`info`** (cyan `::`) — neutral status updates, skipped items, instructions
 - **`warn`** (yellow `::`) — things that need attention but aren't errors
 - **`good`** (green `::`) — successful operations, confirmations
-
-Errors use inline `${RED}` rather than a dedicated function (they typically `exit` right after).
+- **`error`** (red `::`) — fatal problems, typically followed by `exit 1`
 
 ### When to Use `${BOLD}` Inline
 
@@ -96,7 +96,7 @@ fi
 
 ### TL;DR for an Agent
 
-1. Colored `::` prefix for all log lines (cyan=info, yellow=warn, green=success, inline red=error)
+1. Colored `::` prefix for all log lines (cyan=info, yellow=warn, green=success, red=error to stderr)
 2. `${BOLD}` on the key noun in a message, not the whole line
 3. `# --- label ---` comment separators between sections
 4. 2-space indented prompts with bracketed options

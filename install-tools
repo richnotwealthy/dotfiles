@@ -1,45 +1,84 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-echo "Installing tools..."
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+RESET='\033[0m'
 
-# Eternal Terminal
+info()  { echo -e "${CYAN}::${RESET} $*"; }
+warn()  { echo -e "${YELLOW}::${RESET} $*"; }
+good()  { echo -e "${GREEN}::${RESET} $*"; }
+error() { echo -e "${RED}::${RESET} $*" >&2; }
+
+info "${BOLD}Installing tools ...${RESET}"
+
+echo
+
+# --- eternal terminal ---
+
 if ! command -v et &> /dev/null; then
     if command -v apt-get &> /dev/null; then
-        echo "Installing Eternal Terminal..."
+        info "Installing ${BOLD}Eternal Terminal${RESET} ..."
         sudo add-apt-repository -y ppa:jgmath2000/et
         sudo apt-get update
         sudo apt-get install -y et
+        good "et: installed"
     else
-        echo "Skipping Eternal Terminal (apt-get not found)"
+        warn "et: skipped (${BOLD}apt-get${RESET} not found)"
     fi
 else
-    echo "Eternal Terminal already installed"
+    info "${BOLD}et${RESET} already installed"
 fi
 
-# Node.js via fnm
+echo
+
+# --- node.js via fnm ---
+
 if ! command -v fnm &> /dev/null; then
-    echo "Installing fnm..."
+    if ! command -v curl &> /dev/null; then
+        error "${BOLD}curl${RESET} not found, cannot install fnm"
+        exit 1
+    fi
+    info "Installing ${BOLD}fnm${RESET} ..."
     curl -fsSL https://fnm.vercel.app/install | bash
     export PATH="$HOME/.local/share/fnm:$PATH"
     eval "$(fnm env --shell bash)"
+    good "fnm: installed"
+else
+    info "${BOLD}fnm${RESET} already installed"
 fi
 
 if ! command -v node &> /dev/null; then
-    echo "Installing Node.js..."
+    info "Installing ${BOLD}Node.js${RESET} LTS ..."
     fnm install --lts
     fnm default lts-latest
+    good "node: installed $(node --version)"
 else
-    echo "Node.js already installed: $(node --version)"
+    info "${BOLD}node${RESET} already installed ($(node --version))"
 fi
 
-# Claude Code
+echo
+
+# --- claude code ---
+
 if ! command -v claude &> /dev/null; then
-    echo "Installing Claude Code..."
+    if ! command -v npm &> /dev/null; then
+        error "${BOLD}npm${RESET} not found, cannot install Claude Code"
+        exit 1
+    fi
+    info "Installing ${BOLD}Claude Code${RESET} ..."
     npm install -g @anthropic-ai/claude-code
+    good "claude: installed"
 else
-    echo "Claude Code already installed"
+    info "${BOLD}claude${RESET} already installed"
 fi
 
-echo ""
-echo "Done! Run 'claude' to authenticate."
+echo
+
+good "${BOLD}Done!${RESET}"
+echo
+echo "  Next steps:"
+echo -e "    1. Run ${BOLD}claude${RESET} to authenticate"
