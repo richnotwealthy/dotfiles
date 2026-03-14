@@ -53,10 +53,4 @@ znt_list_colorpair="15/235"
 znt_list_border=1
 
 ### Startup ###
-if command -v fortune &> /dev/null && command -v cowsay &> /dev/null; then
-  if command -v shuf &> /dev/null; then
-    fortune | cowsay -f "$(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1)"
-  else
-    fortune | cowsay -r
-  fi
-fi
+source "$dotfiles/banner.zsh"
